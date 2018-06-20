@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.fmorais.androidbarcodegame"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="br.com.fmorais.androidbarcodegame.MainActivity"
+            android:label="@string/app_name"
+            android:configChanges="orientation|screenSize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="br.com.fmorais.androidbarcodegame.StatsActivity"
+            android:label="@string/title_activity_stats" >
+        </activity>
+        
+        <activity android:name="com.google.zxing.client.android.CaptureActivity"
+		   android:screenOrientation="landscape"
+		   android:configChanges="orientation|keyboardHidden"
+		   android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+		   android:windowSoftInputMode="stateAlwaysHidden">
+		   <intent-filter>
+		      <action android:name="android.intent.action.MAIN"/>
+		      <category android:name="android.intent.category.DEFAULT"/>
+		   </intent-filter>
+		   <intent-filter>
+		      <action android:name="br.com.fmorais.zxing.client.android.SCAN"/>
+		      <category android:name="android.intent.category.DEFAULT"/>
+    </intent-filter>
+</activity>
+        
+    </application>
+
+</manifest>
